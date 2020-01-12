@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.showPost),
+    path('',views.showPostIndex),
+    path('<str:postLink>',views.showPost),
 ]

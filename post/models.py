@@ -16,7 +16,6 @@ class Post(models.Model):
     link=models.CharField('link',max_length=256)
     categories=models.ManyToManyField(Category)
     visible=models.BooleanField('visible') #not for admin
-
     class meta:
         ordering=('-modify_time','-release_time',)
     def __str__(self):
@@ -25,7 +24,9 @@ class Post(models.Model):
 class Comment(models.Model):
     nickname=models.CharField('nickname',max_length=50)
     email=models.EmailField('email')
+    release_time=models.DateTimeField('release_time')
     content=models.TextField('content')
-    replyTo=models.ForeignKey('self',on_delete=models.CASCADE,)
+    replyTo=models.ForeignKey('self',on_delete=models.CASCADE,blank=True,null=True)
+    post=models.ForeignKey(Post,on_delete=models.CASCADE,blank=True,null=True)
     visible=models.BooleanField('visible') #not for admin
     
