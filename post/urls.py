@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('',views.showPostIndex),
-    path('<str:postLink>',views.showPost),
+    path('<str:link>',views.showPost),
+    path('/comment'),
 ]
