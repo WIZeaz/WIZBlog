@@ -1,0 +1,6 @@
+<div class="no-padding block subtitle"> 所有文章 </div>
+<div class="no-padding block">
+{% for post in Post.objects.all() if post.visible %}
+<div class="block-item">{{post.title}}</div>
+{% endfor %}
+</div>

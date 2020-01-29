@@ -1,0 +1,18 @@
+<div class="block">
+  <div class="subtitle"> 热门文章 </div>
+  {% for post in Post.objects.order_by('-reading')[:config['hotest_posts']] if post.visible%}
+  <div class="hotpost">
+  
+  {% if loop.index==1 %} <span class="layui-badge">
+  {% elif loop.index==2 %} <span class="layui-badge layui-bg-orange">
+  {% elif loop.index==3 %} <span class="layui-badge layui-bg-green">
+  {% else %} <span class="layui-badge layui-bg-cyan">
+  {% endif %}
+
+  {{loop.index}} 
+  </span> 
+  <a href="/post/{{post.link}}">{{post.title}} </a>
+  </div>
+
+  {% endfor %}
+</div>

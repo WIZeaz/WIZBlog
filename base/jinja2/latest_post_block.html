@@ -1,0 +1,20 @@
+<div class="block">
+    <div class="subtitle"> 最新文章 </div>
+    <ul class="layui-timeline">
+    {% for post in Post.objects.order_by('-release_time')[:config['latest_posts']] if post.visible%}
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis"> &#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title"> {{post.release_time.strftime('%Y-%m-%d')}} </h3>
+            <h2><a href="/post/{{post.link}}"><strong> {{post.title}} </strong></a></h2>
+        </div>
+      </li>
+    {% endfor %}
+      <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+          <div class="layui-timeline-title"><a href="/post">查看所有</a></div>
+      </div>
+      </li>
+    </ul>
+</div>

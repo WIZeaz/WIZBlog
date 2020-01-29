@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block leftcolumn %}
+  {% include 'latest_post_block.html' %}
+{% endblock leftcolumn %}
+
+{% block rightcolumn %}
+
+  {% include 'search_block.html' %}
+
+  {% include 'category_block.html' %}
+
+  {% include 'hot_post_block.html' %}
+
+{% endblock rightcolumn %}

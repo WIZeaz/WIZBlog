@@ -1,0 +1,9 @@
+<div class="block">
+<div class="subtitle"> 文章信息 </div>
+<p> 作者： {{post.author}}</p>
+<p> 最先发布于： {{post.release_time}} </p>
+<p> 最后修改于： {{post.modify_time}} </p>
+<p> 阅读量： {{post.reading}} </p>
+<p> 分类： {% for category in post.categories.all() %} {% if loop.index>1 %}|{% endif %}{{category}} {% endfor %} </p>
+
+</div>

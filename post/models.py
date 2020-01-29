@@ -9,9 +9,9 @@ class Category(models.Model):
 class Post(models.Model):
     title=models.CharField('title',max_length=256,primary_key=True)
     author=models.CharField('author',max_length=50)
-    
     release_time=models.DateTimeField('release_time')
     modify_time=models.DateTimeField('modify_time')
+    reading=models.IntegerField('reading',default=0)
     content=models.TextField('content')
     link=models.CharField('link',max_length=256)
     categories=models.ManyToManyField(Category)

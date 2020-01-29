@@ -1,0 +1,117 @@
+body{
+	color:#555;
+}
+h1,h2,strong {
+	color: #333;
+}
+.header{
+	background-image: url(https://cdn.vijos.org/ui/components/header/header-background.png);
+	overflow: hidden;
+	height: 15rem;
+}
+.header-logo{
+	background-image: url(./logo.png) ;
+	height: 10rem;
+	width:30rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+	position: relative;
+	top:3rem;
+	z-index:99;
+}
+.main{
+	background-color: rgb(237, 240, 242);
+	padding-top: 20px;
+	box-shadow: 0 10px 5px rgb(222,229,232);
+}
+.block{
+	background-color: white;
+	box-shadow: 0 0 10px transparent inset,0 0 10px rgb(201, 207, 209);
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+	margin-bottom: 20px;
+	position: relative;
+	opacity: 0;
+	top:50px;
+	transition: all 400ms ease-in-out;
+}
+.block:hover{
+	box-shadow:0 0 8px rgba(30, 158, 255, 0.3) inset, 0 0 10px rgb(201, 207, 209);
+}
+.no-padding{
+	padding:0!important;
+}
+
+.footer{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+}
+.subtitle{
+	font-size: 20px;
+	font: bold;
+	margin-bottom: 1rem;
+}
+.hotpost{
+	margin-bottom: 0.5rem;
+	padding-left: 0.5rem;
+}
+.hotpost .layui-badge{
+	margin-right: 0.5rem;
+}
+
+
+.main-nav{
+	height: 3rem;
+	position: fixed;
+	top: 0px;
+	background-color: transparent;
+	width:100%;
+	margin: 0 auto;
+	z-index: 100;
+	transition: all 150ms;
+}
+.main-nav-floating{
+	height: 3rem;
+	position: fixed;
+	top: 0px;
+	background-color: rgba(255, 255, 255, .98);
+	box-shadow: 0 0 10px rgb(222,229,232);
+}
+
+
+.main-nav .nav-item{
+	display: inline-block;
+	font-size: 1.1rem;
+	line-height: 2.7rem;
+	width: 120px;
+	color:white;
+	transition: width 1s,border 200ms,box-shadow 200ms;
+	text-overflow: clip;
+	white-space:nowrap; 
+	overflow: hidden;
+	border-bottom: 0.3rem solid transparent;
+	text-align: center;
+	box-sizing: border-box;
+}
+.main-nav .nav-item:hover{
+	background-color: rgba(235, 235, 235, 0.98);
+	border-bottom: 0.3rem solid #5FB878;
+}
+.nav-this{
+	border-bottom: 0.3rem solid #FF5722 !important;
+}
+.hide-div{
+	width: 0px !important;
+}
+
+.block .block-item{
+	padding: 1rem 1rem 1rem;
+	border-bottom: #c2c2c2 solid 1px ;
+}
+
+.layui-nav{
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	z-index: 100;
+}
