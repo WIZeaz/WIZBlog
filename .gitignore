@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
 # C extensions
 *.so
 
@@ -123,3 +122,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# django migrations
+!*/migrations/__init__.py
+*/migrations/

@@ -11,10 +11,10 @@
 <div class="main">
   <div class="layui-container">  
     <div class="layui-row  layui-col-space20">
-      <div class="layui-col-md8">
+      <div class="layui-col-md9">
         {% block leftcolumn %}{% endblock leftcolumn %}
       </div>
-      <div class="layui-col-md4">
+      <div class="layui-col-md3">
         {% block rightcolumn %}{% endblock rightcolumn %}
       </div>
     </div>
@@ -25,15 +25,15 @@
  
 <script src="{{static('layui/layui.js')}}"></script>
 <script src="{{static('js/base.js')}}"></script>
+<script src="{{static('markdown/markdown-render.js')}}"></script>
 <script>
-
 layui.use(['layer', 'form'], function(){
   var layer = layui.layer
   ,form = layui.form;
 });
-/*layui.use('element', function(){
+layui.use('element', function(){
   var element = layui.element;
-});*/
+});
 </script>
 </body>
 </html>
