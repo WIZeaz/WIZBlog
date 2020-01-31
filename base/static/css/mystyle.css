@@ -40,6 +40,9 @@ h1,h2,strong {
 .no-padding{
 	padding:0!important;
 }
+.left-padding{
+	padding:0 2em 0 0!important;
+}
 
 .footer{
 	padding-top: 2rem;
@@ -61,7 +64,7 @@ h1,h2,strong {
 
 
 .main-nav{
-	height: 3rem;
+	height: 2.5rem;
 	position: fixed;
 	top: 0px;
 	background-color: transparent;
@@ -71,7 +74,7 @@ h1,h2,strong {
 	transition: all 150ms;
 }
 .main-nav-floating{
-	height: 3rem;
+	height: 2.5rem;
 	position: fixed;
 	top: 0px;
 	background-color: rgba(255, 255, 255, .98);
@@ -82,38 +85,78 @@ h1,h2,strong {
 .main-nav .nav-item{
 	display: inline-block;
 	font-size: 1.1rem;
-	line-height: 2.7rem;
+	line-height: 2.3rem;
 	width: 120px;
 	color:white;
 	transition: width 1s,border 200ms,box-shadow 200ms;
 	text-overflow: clip;
 	white-space:nowrap; 
 	overflow: hidden;
-	border-bottom: 0.3rem solid transparent;
+	border-bottom: 0.2rem solid transparent;
 	text-align: center;
 	box-sizing: border-box;
 }
 .main-nav .nav-item:hover{
 	background-color: rgba(235, 235, 235, 0.98);
-	border-bottom: 0.3rem solid #5FB878;
+	border-bottom: 0.2rem solid #5FB878;
 }
 .nav-this{
-	border-bottom: 0.3rem solid #FF5722 !important;
+	border-bottom: 0.2rem solid #FF5722 !important;
 }
 .hide-div{
 	width: 0px !important;
 }
 
 .block .block-item{
-	padding: 1rem 1rem 1rem;
+	padding: 1rem 2em 1rem 2em;
 	border-bottom: #c2c2c2 solid 1px ;
 }
 .block-item-info{
-	margin-top:1rem;
+	margin-top:0.7em;
 }
 .layui-nav{
 	position: fixed;
 	width: 100%;
 	top: 0px;
 	z-index: 100;
+}
+.summary{
+	color:grey;
+	margin-left: 2em;
+}
+dl.info-list{
+	line-height: 1.5em;
+	font-size: 15px;
+}
+dl.info-list dt{
+	color:grey;
+	display:inline;
+	text-align: left;
+}
+
+dl.info-list dd{
+	display:inline;
+	float:right;
+	text-align: right;
+}
+
+.blog-tag{
+	line-height: 1.5em;
+	display:inline-block;
+	background-color: #999;
+	width: 2em;
+	padding: 0 0.3em 0 0.3em;
+	text-align: center;
+	color: white;
+	transition: all 500ms;
+}
+
+.blog-tag:hover{
+	background-color: #01AAED;
+}
+
+.comment-bar{
+	position:absolute;
+	bottom:2em;
+	right:2em;
 }

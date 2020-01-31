@@ -8,7 +8,7 @@ marked.setOptions({
 });
 $('.markdown-wrapper').each(
 function(index,e){
-    var markdown_string=e.innerHTML;
+    var markdown_string=e.textContent;
     markdown_string = marked(markdown_string);
     e.innerHTML= markdown_string;
     renderMathInElement(e,

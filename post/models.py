@@ -13,6 +13,7 @@ class Post(models.Model):
     modify_time=models.DateTimeField('modify_time')
     reading=models.IntegerField('reading',default=0)
     content=models.TextField('content')
+    summary=models.TextField('summary')
     link=models.CharField('link',max_length=256)
     categories=models.ManyToManyField(Category)
     visible=models.BooleanField('visible') #not for admin

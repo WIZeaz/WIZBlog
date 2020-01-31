@@ -1,9 +1,17 @@
 <div class="block">
 <div class="subtitle"> 文章信息 </div>
-<p> 作者： {{post.author}}</p>
-<p> 最先发布于： {{post.release_time}} </p>
-<p> 最后修改于： {{post.modify_time}} </p>
-<p> 阅读量： {{post.reading}} </p>
-<p> 分类： {% for category in post.categories.all() %} {% if loop.index>1 %}|{% endif %}{{category}} {% endfor %} </p>
+<dl class="info-list">
+<dt>作者</dt> <dd>{{post.author}}</dd>
+<br>
+<dt>最先发布于</dt> <dd>{{post.release_time.strftime('%Y-%m-%d')}}</dd>
+<br>
+<dt>最后修改于</dt> <dd>{{post.modify_time.strftime('%Y-%m-%d')}}</dd>
+<br>
+<dt>阅读量</dt> <dd>{{post.reading}}</dd>
+<br>
+<dt>分类</dt> <dd>{% for category in post.categories.all() %} <a href="/post/?category={{category}}"><div class="blog-tag"> {{category}} </div></a> {% endfor %}</dd>
+</dl>
+
+
 
 </div>

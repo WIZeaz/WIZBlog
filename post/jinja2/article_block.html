@@ -1,5 +1,51 @@
+
 <div class="block">
-<h1><strong> {{post.title}} </strong></h1>
-<hr>
-<div class="markdown-wrapper">{{post.content}}</div>
+<h1> {{post.title}} </h1>
+<div class="markdown-wrapper">{{ post.content|safe }}</div>
+</div>
+<div class="block">
+<div class="subtitle">所有{{post.comment_set.filter(visible=True).count()}}条评论</div>
+<form id="comment-form" class="layui-form block-item" action="/api/comment/{{ post.link }}"  method="POST">
+    <input type ="hidden" name ="csrfmiddlewaretoken" value ="{{csrf_token}}">
+    <div class="layui-form-item">
+        <div class="layui-row">
+            <div class="layui-col-md6">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="nickname" required  lay-verify="required" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-col-md6">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="email" required  lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <textarea name="content" placeholder="请输入内容(支持markdown语法)" lay-verify="required" class="layui-textarea" id="comment-content"></textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">发表</button>
+        </div>
+    </div>
+        
+</form>
+
+    
+
+
+{% for comment in post.comment_set.all() if comment.visible%}
+<div class="block-item">
+    <p>{{comment.nickname}} @ {{comment.release_time.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+    <div class="markdown-wrapper">{{comment.content}}</div>
+    <!--<div class="comment-bar"> <a href="#comment-form" onclick="reply(this)">回复</a> </div>-->
+</div>
+{% endfor %}
 </div>

@@ -1,8 +1,8 @@
 <div class="block">
   <div class="subtitle">分类 </div>
-  <span class="layui-breadcrumb" lay-separator="|">
+
   {% for category in Category.objects.all() %}
-    <a href="/post/?category={{category.name}}">{{category.name}}</a>
+    <a href="/post/?category={{category.name}}"><div class="blog-tag">{{category.name}}</div></a>
   {% endfor %}
-  </span>
+  
 </div>
