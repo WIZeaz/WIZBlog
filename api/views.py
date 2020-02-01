@@ -24,6 +24,9 @@ def comment(request,link):
         if not validateEmail(email):
             reason='邮箱格式错误'
             raise Exception()
+        if len(content)>500:
+            reason='内容长度不能超过500。'
+            raise Exception()
 
         comment=Comment(nickname=nickname,email=email,content=content,post=post,release_time=datetime.datetime.now(),visible=True)
         comment.save()
