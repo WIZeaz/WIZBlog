@@ -35,5 +35,3 @@ def showPost(request,link):
 def showFilteredPost(request):
     pass
 
-def comment(request):
-    pass

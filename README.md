@@ -1,11 +1,11 @@
 # WIZBlog
 
-An outsource blog system, developed by Django3.0 framework. 
+An outsource blog system, developed by Django3.0 framework.
 
-#Package Dependency
+# Package Dependency
 
 ## backend
-- Django3.0
+- Django
 - jinja2
 
 ## frontend

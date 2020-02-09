@@ -3,14 +3,9 @@ from post.models import Post,Comment
 from django.http import HttpResponse,Http404
 from django.shortcuts import redirect
 import datetime
-import re
-
-def validateEmail(email):
-    if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", email) != None:
-        return True
-    else:
-        return False
+from util import validateEmail
 # Create your views here.
+
 def comment(request,link):
     reason="遇到了意料之外的错误"
     try:
@@ -25,7 +20,7 @@ def comment(request,link):
             reason='邮箱格式错误'
             raise Exception()
         if len(content)>500:
-            reason='内容长度不能超过500。'
+            reason='内容长度不能超过500'
             raise Exception()
 
         comment=Comment(nickname=nickname,email=email,content=content,post=post,release_time=datetime.datetime.now(),visible=True)
@@ -33,4 +28,3 @@ def comment(request,link):
     except:
         raise Http404(f'评论保存失败！{reason}。')
     return redirect(f'/post/{link}#comment-form')
-        

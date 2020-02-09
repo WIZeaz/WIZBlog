@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 import base.views as base_views
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('',base_views.showIndex),
     path('admin/', admin.site.urls),
     path('post/',include('post.urls')),
     path('api/',include('api.urls')),
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
