@@ -9,3 +9,7 @@ def showIndex(request):
     #latest_posts=Post.objects.all()[:config.latest_posts]
     context={'title':'首页','config':config,'Post':Post,'Category':Category,'nav_index':0}
     return render(request,'index.html',context)
+
+def aboutMe(request):
+    context={'title':'首页','config':config,'Post':Post,'Category':Category,'nav_index':3}
+    return render(request,'aboutMe.html',context)

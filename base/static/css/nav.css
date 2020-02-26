@@ -1,0 +1,38 @@
+.main-nav{
+	height: 2.5rem;
+	position: fixed;
+	top: 0px;
+	background-color: transparent;
+	width:100%;
+	margin: 0 auto;
+	z-index: 100;
+	transition: all 150ms;
+}
+.main-nav-floating{
+	height: 2.5rem;
+	position: fixed;
+	top: 0px;
+	background-color: rgba(255, 255, 255, .98);
+	box-shadow: 0 0 10px rgb(222,229,232);
+}
+.main-nav .nav-item{
+	display: inline-block;
+	font-size: 1.1rem;
+	line-height: 2.2rem;
+	width: 120px;
+	color:white;
+	transition: width 1s,border 200ms,box-shadow 200ms;
+	text-overflow: clip;
+	white-space:nowrap; 
+	overflow: hidden;
+	border-bottom: 0.3rem solid transparent;
+	text-align: center;
+	box-sizing: border-box;
+}
+.main-nav .nav-item:hover{
+	background-color: rgba(235, 235, 235, 0.98);
+	border-bottom: 0.3rem solid #5FB878;
+}
+.nav-this{
+	border-bottom: 0.3rem solid #FF5722 !important;
+}

@@ -1,7 +1,7 @@
 
 <div class="block">
-<h1> {{post.title}} </h1>
-<div class="markdown-wrapper">{{ post.content|safe }}</div>
+<div class="title"> {{post.title}} </div>
+<div class="markdown-wrapper">{{ post.content }}</div>
 </div>
 <div class="block">
 <div class="subtitle">所有{{post.comment_set.filter(visible=True).count()}}条评论</div>
@@ -40,6 +40,7 @@
 
     
 
+{% autoescape on %}
 
 {% for comment in post.comment_set.all() if comment.visible%}
 <div class="block-item">
@@ -48,4 +49,7 @@
     <!--<div class="comment-bar"> <a href="#comment-form" onclick="reply(this)">回复</a> </div>-->
 </div>
 {% endfor %}
+
+{% endautoescape %}
+
 </div>

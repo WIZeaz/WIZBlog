@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('',base_views.showIndex),
     path('admin/', admin.site.urls),
+    path('aboutMe/',base_views.aboutMe),
     path('post/',include('post.urls')),
     path('api/',include('api.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
