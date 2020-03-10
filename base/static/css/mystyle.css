@@ -9,7 +9,10 @@ h1,h2,strong {
 	color: #333;
 }
 .header{
-	background-image: url(https://cdn.vijos.org/ui/components/header/header-background.png);
+	background-image: url('./head.jpg');
+	background-attachment: fixed;
+	background-position: -500px -1000px;
+	background-size: 2500px;
 	overflow: hidden;
 	height: 15rem;
 }
